@@ -2,8 +2,11 @@
 
 This is a medical application to connect patients directly to doctors. It's a single page React website with a Django backend. Users can be either patients or doctors. Patients can request appointments using this and the doctors can accept or reject them.
 
-![UI on a PC]('./desktop_screenshot')
-![UI on a phone]('./mobile_screenshot')
+![UI on a PC](./desktop_screenshot.jpeg)
+\
+\
+\
+![UI on a phone](./mobile_screenshot.jpeg)
 
 ## How to run this project
 
