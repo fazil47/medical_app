@@ -43,7 +43,7 @@ or after making changes run:
 npm run build
 ```
 
-To change the styling `cd` into `frontend/static/css` and run:
+To change the styling, `cd` into `frontend/static/css` and run:
 
 ```
 sass index.scss:index.css --watch
