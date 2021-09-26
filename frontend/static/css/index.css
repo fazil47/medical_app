@@ -1,0 +1,506 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 98%;
+  background-color: white;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+#app > .animatedLoaderIcon {
+  margin: auto;
+}
+
+.button {
+  padding: 6px 3%;
+  border: none;
+  border-radius: 10px;
+}
+
+.primary {
+  background-color: #006eff;
+  color: white;
+}
+
+.danger {
+  background-color: #ffc3c3;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.errorMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffc3c3;
+  border-radius: 10px;
+}
+.errorMessage > * {
+  padding: 20px !important;
+}
+
+.selectableItem:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 12px 0 #d1d1d1;
+}
+
+.selectedItem {
+  box-shadow: 0 8px 12px 0 #d1d1d1;
+  background-color: #e9e9e9;
+}
+
+.profilePicture {
+  background-size: cover;
+}
+
+.labelGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+}
+.labelGroup > label {
+  padding: 6px 3%;
+  cursor: inherit;
+}
+.labelGroup > label:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+  margin: -1px 0 -1px -1px;
+  background-color: #e9e9e9;
+  border: 1px solid #d1d1d1;
+}
+.labelGroup > label:nth-child(2) {
+  flex-grow: 1;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+}
+.inputGroup > input, .inputGroup > textarea, .inputGroup > select {
+  padding: 6px 3%;
+  border: none;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  outline: none;
+  flex-grow: 1;
+  transition: 0.1s;
+}
+.inputGroup > textarea {
+  min-height: 75px;
+}
+.inputGroup > input:focus, .inputGroup > textarea:focus, .inputGroup > select:focus {
+  outline: none;
+  box-shadow: inset 0 0 2px 2px #006eff;
+}
+.inputGroup > label {
+  padding: 6px 3%;
+  border-radius: 10px 0 0 10px;
+  margin: -1px 0 -1px -1px;
+  background-color: #e9e9e9;
+  border: 1px solid #d1d1d1;
+}
+
+.dialogBoxContainerDisabled {
+  display: none;
+}
+
+.dialogBoxContainerEnabled {
+  display: block;
+}
+.dialogBoxContainerEnabled .dialogBoxBackground {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(139, 139, 139, 0.7);
+  z-index: 20;
+}
+.dialogBoxContainerEnabled .dialogBoxBackground .dialogBox {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.dialogBoxContainerEnabled .dialogBoxBackground .dialogBox .dialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  flex-shrink: 0;
+}
+.dialogBoxContainerEnabled .dialogBoxBackground .dialogBox .dialogHeader .dismissButton:hover {
+  cursor: pointer;
+}
+.dialogBoxContainerEnabled .dialogBoxBackground .dialogBox #dialogBody {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 60vh;
+  margin-bottom: 25px;
+}
+.dialogBoxContainerEnabled .dialogBoxBackground .dialogBox #dialogBody > *:last-child {
+  margin-bottom: 30px;
+}
+
+#userAccountPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#userAccountPage .card {
+  width: 100% !important;
+  height: 100%;
+  border-radius: inherit !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+#header {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 40px;
+  width: 100%;
+  padding: 10px 0;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+#header #logoDiv {
+  flex-grow: 1;
+  height: 100%;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+}
+#header #logoDiv #logoButton {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(58, 58, 58, 0.4);
+}
+#header #logoDiv #logoButton:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(63, 63, 63, 0.4);
+}
+@media (min-width: 600px) {
+  #header #navbar {
+    display: flex;
+  }
+  #header #navSelect {
+    display: none;
+  }
+}
+@media (max-width: 599px) {
+  #header #navbar {
+    display: none;
+  }
+  #header #navSelect {
+    display: flex;
+  }
+}
+#header #navbar,
+#header #navSelect {
+  flex-grow: 1.5;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px 0 rgba(59, 59, 59, 0.4);
+  border-radius: 10px;
+  height: 100%;
+  background-color: white;
+}
+#header #navSelect {
+  padding: 5px 10px;
+  border: none;
+  text-align: center;
+}
+#header #navSelect:focus {
+  outline: none;
+  box-shadow: inset 0 0 2px 2px #006eff;
+}
+#header #navbar button {
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+}
+#header #navbar button:hover:not(.selected) {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px 0 #d6d6d6;
+}
+#header #navbar .selected {
+  background-color: #d6d6d6;
+  box-shadow: 0 4px 8px 0 #d6d6d6;
+}
+#header #userDiv {
+  flex-grow: 1;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+  height: 100%;
+}
+#header #userDiv #userButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(59, 59, 59, 0.4);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px 0 rgba(58, 58, 58, 0.4);
+}
+#header #userDiv #userButton .profilePicture {
+  height: inherit;
+  width: inherit;
+  border-radius: 50%;
+}
+#header #userDiv #userButton .profilePicture svg {
+  height: inherit;
+  width: inherit;
+  border-radius: 50%;
+  background-color: white;
+}
+#header #userDiv #userButton:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(63, 63, 63, 0.4);
+}
+
+#mainSection {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.card {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(59, 59, 59, 0.4);
+  box-shadow: inherit;
+}
+.card .cardHeader {
+  box-shadow: inherit;
+  border-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #f3f3f3;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  width: 100%;
+  flex-basis: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card .cardHeader .backButton {
+  padding: 0 !important;
+  margin-left: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30px;
+}
+.card .cardHeader .backButtonOffset {
+  margin-right: 8%;
+  width: 30px;
+}
+.card .cardHeader .cardTitle {
+  flex-grow: 1;
+  text-align: center;
+}
+.card .cardBody {
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card .cardBody .profilePicture {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: none;
+}
+.card .cardBody .profilePicture img,
+.card .cardBody .profilePicture svg {
+  border: 1px solid #d1d1d1;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: white;
+}
+.card .cardBody .scrollableList {
+  height: 400px;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+.card .cardBody .scrollableList > *:last-child {
+  margin-bottom: 50px;
+}
+.card .cardBody ul {
+  flex-grow: 1;
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card .cardBody ul .columnFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+}
+.card .cardBody ul .columnFlex > * {
+  margin: 10px;
+  width: 90%;
+}
+.card .cardBody ul li {
+  width: 90%;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+}
+.card .cardBody ul li > .button:only-child {
+  width: 100%;
+}
+.card .cardFooter {
+  width: 90%;
+  text-align: center;
+  padding: 10px 10px 30px 10px;
+}
+
+.page {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px 0 rgba(59, 59, 59, 0.4);
+  width: 98%;
+  border-radius: 10px;
+  background-color: white;
+}
+@media (min-width: 600px) {
+  .page .selectedPageSide {
+    display: block;
+    border-radius: inherit;
+  }
+  .page .deselectedPageSide {
+    display: block;
+    border-radius: inherit;
+  }
+}
+@media (max-width: 599px) {
+  .page .selectedPageSide {
+    display: block;
+    border-radius: 10px !important;
+  }
+  .page .deselectedPageSide {
+    display: none;
+  }
+  .page .pageMid {
+    display: none;
+  }
+}
+.page .pageSide {
+  background-color: inherit;
+  height: 100%;
+  width: 49%;
+  z-index: 10;
+  flex-grow: 1;
+}
+.page .pageSide .card {
+  width: 100% !important;
+  height: 100%;
+  border-radius: inherit !important;
+  border: none !important;
+  margin: 0 !important;
+}
+.page .pageMid {
+  height: 100%;
+  width: 2px;
+  box-shadow: 0 2px 6px 0 rgba(59, 59, 59, 0.4);
+  background-color: rgba(59, 59, 59, 0.4);
+  z-index: 11;
+}
+.page .pageSide:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+}
+.page .pageSide:nth-child(3) {
+  border-radius: 0 10px 10px 0;
+}
+
+#homePage .card {
+  width: 100%;
+  height: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+#footer {
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 30px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,4 @@
+node_modules
+.vscode
+media/profile_pictures/*
+db.sqlite3
