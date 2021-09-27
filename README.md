@@ -10,16 +10,23 @@ This is a medical application to connect patients directly to doctors. It's a si
 
 ## How to run this project
 
-To migrate changes to the database, in the base directory run:
+### With Docker
+To run the Docker container, first make a `.env` file in the root directory with the contents:
+```
+POSTGRES_PASSWORD=your_password
+```
+
+Then run:
+```
+docker-compose up
+```
+
+### Without Docker
+In the base directory run:
 
 ```
 python manage.py makemigrations
 python manage.py migrate
-```
-
-Since a build of the frontend is present the application can be started just by running the server. To start the server, in the base directory run:
-
-```
 python manage.py runserver
 ```
 
