@@ -23,7 +23,7 @@ Since a build of the frontend is present the application can be started just by 
 python manage.py runserver
 ```
 
-To make changes to the frontend first `cd` into `frontend` and run:
+To make changes to the frontend, first `cd` into `frontend` and run:
 
 ```
 npm install
@@ -43,7 +43,7 @@ or after making changes run:
 npm run build
 ```
 
-To change the styling `cd` into `frontend/static/css` and run:
+To change the styling, `cd` into `frontend/static/css` and run:
 
 ```
 sass index.scss:index.css --watch
