@@ -11,12 +11,7 @@ This is a medical application to connect patients directly to doctors. It's a si
 ## How to run this project
 
 ### With Docker
-To run the Docker container, first make a `.env` file in the root directory with the contents:
-```
-POSTGRES_PASSWORD=your_password
-```
-
-Then run:
+Run:
 ```
 docker-compose up
 ```
