@@ -14,7 +14,6 @@ function Register(props) {
     const [email, setEmail] = React.useState("");
     const [specialization, setSpecialization] = React.useState("");
     const [type, setType] = React.useState("");
-    const [profilePicture, setProfilePicture] = React.useState();
     const [errorMessage, SetErrorMessage] = React.useState();
     const [isLoading, SetIsLoading] = React.useState(false);
 
@@ -29,7 +28,6 @@ function Register(props) {
         userDetails.append('confirmation', confirmation);
         userDetails.append('email', email);
         userDetails.append('type', type);
-        userDetails.append('profile_picture', profilePicture);
         if (type === "doctor") {
             userDetails.append('specialization', specialization)
         }
@@ -84,10 +82,6 @@ function Register(props) {
                     <li className="inputGroup">
                         <label>Confirm Password</label>
                         <input required onChange={event => { setConfirmation(event.target.value) }} type="password" name="confirmation" placeholder="Confirm Password" />
-                    </li>
-                    <li className="inputGroup">
-                        <label>Profile Picture</label>
-                        <input onChange={event => { setProfilePicture(event.target.files[0]) }} type="file" name="profilePicture" />
                     </li>
                     <li className="inputGroup">
                         <label>Account Type</label>

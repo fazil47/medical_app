@@ -33,7 +33,7 @@ function UserAccountPage(props) {
         <div id="userAccountPage">
             <div className="card">
                 <div className="cardBody">
-                    <ProfilePicture url={props.userDetails.profile_picture_url} />
+                    <ProfilePicture />
                     <ul>
                         <li className="labelGroup">
                             <label>Username</label>

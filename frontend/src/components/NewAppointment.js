@@ -40,7 +40,7 @@ export default function NewAppointment(props) {
 
     return (
         <>
-            <ProfilePicture url={props.doctorDetails.profile_picture_url} />
+            <ProfilePicture />
             <ul>
                 <li className="labelGroup">
                     <label>First Name</label>

@@ -172,7 +172,7 @@ export default function Appointment(props) {
 
     return (
         <>
-            <ProfilePicture url={displayPersonDetails.profile_picture_url} />
+            <ProfilePicture />
             <ul>
                 <li className="labelGroup">
                     <label>First Name</label>

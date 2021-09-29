@@ -3,13 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models.deletion import CASCADE
 
 
-def profile_upload_path(instance, filename):
-    return '/'.join(['profile_pictures', instance.username, filename])
-
-
 class User(AbstractUser):
-    profile_picture = models.ImageField(
-        null=True, blank=True, upload_to=profile_upload_path)
     type = models.CharField(max_length=64, null=True, blank=True)
 
     def __str__(self) -> str:
@@ -27,7 +21,6 @@ class Patient(models.Model):
             "id": self.pk,
             "first_name": self.user.first_name,
             "last_name": self.user.last_name,
-            "profile_picture_url": self.user.profile_picture.url if self.user.profile_picture else None,
             "type": "patient",
         }
 
@@ -37,7 +30,6 @@ class Patient(models.Model):
             "username": self.user.username,
             "first_name": self.user.first_name,
             "last_name": self.user.last_name,
-            "profile_picture_url": self.user.profile_picture.url if self.user.profile_picture else None,
             "type": "patient",
         }
 
@@ -55,7 +47,6 @@ class Doctor(models.Model):
             "first_name": self.user.first_name,
             "last_name": self.user.last_name,
             "specialization": self.specialization,
-            "profile_picture_url": self.user.profile_picture.url if self.user.profile_picture else None,
             "type": "doctor",
         }
 
@@ -66,7 +57,6 @@ class Doctor(models.Model):
             "first_name": self.user.first_name,
             "last_name": self.user.last_name,
             "specialization": self.specialization,
-            "profile_picture_url": self.user.profile_picture.url if self.user.profile_picture else None,
             "type": "doctor",
         }
 

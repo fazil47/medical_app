@@ -41,7 +41,7 @@ export default function EditAppointment(props) {
 
     return (
         <>
-            <ProfilePicture url={props.appointmentDetails.doctor_details.profile_picture_url} />
+            <ProfilePicture />
             <ul>
                 <li className="labelGroup">
                     <label>First Name</label>

@@ -9,7 +9,7 @@ export default function HomePage(props) {
                     <div className="cardTitle">Public Details</div>
                 </div>
                 <div className="cardBody">
-                    <ProfilePicture url={props.userDetails.profile_picture_url} />
+                    <ProfilePicture />
                     <ul>
                         <li className="labelGroup">
                             <label>First Name</label>

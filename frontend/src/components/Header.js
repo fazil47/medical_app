@@ -36,7 +36,7 @@ export default function Header(props) {
                 <div id="userDiv">
                     <div id="userButton" onClick={handleUserDialogOpen}>
                         {/* <DefaultAccountIcon size="30" /> */}
-                        <ProfilePicture url={props.userDetails.profile_picture_url} />
+                        <ProfilePicture />
                     </div>
                 </div>
             </div>

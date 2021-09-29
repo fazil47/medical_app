@@ -1,13 +1,10 @@
 import React from 'react';
 import DefaultAccountIcon from '../icons/DefaultAccountIcon';
 
-export default function ProfilePicture(props) {
-    const style = props.url ? { backgroundImage: `url(${props.url})` } : {};
+export default function ProfilePicture() {
     return (
-        <div className="profilePicture" style={style}>
-            {!props.url &&
-                <DefaultAccountIcon size="30" />
-            }
+        <div className="profilePicture">
+            <DefaultAccountIcon size="30" />
         </div>
     );
 }

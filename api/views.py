@@ -14,7 +14,6 @@ def RegisterUser(request):
         return JsonResponse({"error": "POST request is required."}, status=400)
 
     data = request.POST
-    profile_picture = request.FILES.get('profile_picture')
     username = data.get("username")
     email = data.get("email")
     password = data.get("password")
@@ -28,7 +27,7 @@ def RegisterUser(request):
 
     try:
         user = User.objects.create_user(username=username,
-                                        email=email, password=password, profile_picture=profile_picture, first_name=first_name, last_name=last_name, type=type)
+                                        email=email, password=password, first_name=first_name, last_name=last_name, type=type)
         user.save()
     except IntegrityError:
         return JsonResponse({"message": "Account already exists with this username"}, status=409)
