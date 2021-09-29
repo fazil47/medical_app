@@ -8,35 +8,16 @@ This is a medical application to connect patients directly to doctors. It's a si
 \
 ![UI on a phone](./mobile_screenshot.jpeg)
 
-## How to run this project
 
-### Deploy to Heroku
+## Deploy to Heroku
 After creating a Heroku app add that url to `ALLOWED_HOSTS` in `medical_app/settings.py`, then deploy and finally run:
 ```
 heroku run python3 manage.py migrate
 ```
 
-### With Docker
-To run the Docker container, first make a `.env` file in the root directory with the contents:
-```
-POSTGRES_PASSWORD=your_password
-```
+## Making changes to the frontend
 
-Then run:
-```
-docker-compose up
-```
-
-### Without Docker
-In the base directory run:
-
-```
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-```
-
-To make changes to the frontend, first `cd` into `frontend` in a separate terminal and  run:
+first `cd` into `frontend` in a separate terminal and  run:
 
 ```
 npm install
