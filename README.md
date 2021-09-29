@@ -10,6 +10,12 @@ This is a medical application to connect patients directly to doctors. It's a si
 
 ## How to run this project
 
+### Deploy to Heroku
+After creating a Heroku app add that url to `ALLOWED_HOSTS` in `medical_app/settings.py`, then deploy and finally run:
+```
+heroku run python3 manage.py migrate
+```
+
 ### With Docker
 To run the Docker container, first make a `.env` file in the root directory with the contents:
 ```
