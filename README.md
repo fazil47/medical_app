@@ -30,7 +30,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-To make changes to the frontend, first `cd` into `frontend` and run:
+To make changes to the frontend, first `cd` into `frontend` in a separate terminal and  run:
 
 ```
 npm install
@@ -38,7 +38,7 @@ npm install
 
 to install `react`, `react-dom` and `react-router`
 
-To make changes appear while editing, `cd` into `frontend` in a separate terminal and run:
+To make changes appear while editing, run:
 
 ```
 npm run dev
